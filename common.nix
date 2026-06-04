@@ -173,7 +173,7 @@ in
           path = with pkgs; [
             systemd # systemctl
             bash # sh
-            xorg.xauth
+            xauth
             tinyxxd
           ];
           serviceConfig = {

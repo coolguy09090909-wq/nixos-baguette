@@ -26,6 +26,8 @@
   environment.systemPackages = with pkgs; [
     neovim
     git
+    flatpak
+    lutris
   ];
 
   # Configure your system-wide user settings (groups, etc), add more users as needed.

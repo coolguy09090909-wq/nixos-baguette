@@ -22,6 +22,9 @@
     "flakes"
   ];
 
+  # pls work ai i beg u i want games 
+  nixpkgs.config.allowUnfree = true;
+
   # Search for additional packages here: https://search.nixos.org/packages
   environment.systemPackages = with pkgs; [
     neovim

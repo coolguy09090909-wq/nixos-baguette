@@ -30,6 +30,7 @@
     neovim
     git
     flatpak
+    discord
   ];
 
   # Configure your system-wide user settings (groups, etc), add more users as needed.

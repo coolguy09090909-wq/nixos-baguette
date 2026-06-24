@@ -48,5 +48,18 @@
   security.sudo.wheelNeedsPassword = false;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
+ hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      mesa
+      intel-media-driver
+      libva-vdpau-driver
+      libvdpau-va-gl
+    ];
+  };
+
+  environment.variables = {
+    LIBVA_DRIVER_NAME = "virtio";
+  }; 
   system.stateVersion = "25.05";
 }

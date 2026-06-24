@@ -58,7 +58,7 @@
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
  hardware.graphics = {
     enable = true;
-    extraPackages = with pkgs; lib.optionals (pkgs.system == "x86_64-linux") [
+    extraPackages = with pkgs; lib.optionals (pkgs.stdenv.hostPlatform.system == "x86_64-linux") [
       mesa
       intel-media-driver
       libva-vdpau-driver

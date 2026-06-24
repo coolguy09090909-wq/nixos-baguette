@@ -38,10 +38,14 @@ jobs:
           sudo udevadm control --reload-rules
           sudo udevadm trigger --name-match=kvm
 
+      - name: Check KVM
+        run: |
+          ls -la /dev/kvm || echo "KVM not available"
+          grep -m1 'vmx\|svm' /proc/cpuinfo || echo "No virtualization extensions found"
+
       - run: nix build .#baguette-zimage
 
       - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4  # v5.0.0
         with:
           name: zimage-${{ matrix.arch }}
           path: result/*.zst
-

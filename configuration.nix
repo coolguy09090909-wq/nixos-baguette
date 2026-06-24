@@ -4,7 +4,7 @@
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
 {
   # inputs,
-  # lib,
+  lib,
   # config,
   pkgs,
   ...
@@ -58,7 +58,7 @@
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
  hardware.graphics = {
     enable = true;
-    extraPackages = with pkgs; [
+    extraPackages = with pkgs; lib.optionals (pkgs.system == "x86_64-linux") [
       mesa
       intel-media-driver
       libva-vdpau-driver

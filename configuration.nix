@@ -31,6 +31,13 @@
     git
     flatpak
     discord
+    wget
+    curl
+    btop        
+    libva-utils
+    mesa-demos 
+    gnome-themes-extra
+    adwaita-icon-theme
   ];
 
   # Configure your system-wide user settings (groups, etc), add more users as needed.
@@ -60,6 +67,13 @@
 
   environment.variables = {
     LIBVA_DRIVER_NAME = "virtio";
-  }; 
+  };
+  xdg.portal = {
+  enable = true;
+  extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+  config.common.default = "*";
+};
+
+services.dbus.enable = true; 
   system.stateVersion = "25.05";
 }

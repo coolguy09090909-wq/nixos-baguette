@@ -16,6 +16,17 @@
     # ./users.nix
   ];
 
+fonts.packages = with pkgs; [
+  noto-fonts
+  noto-fonts-cjk-sans
+];
+
+environment.systemPackages = with pkgs; [
+  gnome-themes-extra
+  adwaita-icon-theme
+  gdk-pixbuf
+  librsvg
+];
   # Enable flakes: https://nixos.wiki/wiki/Flakes
   nix.settings.experimental-features = [
     "nix-command"

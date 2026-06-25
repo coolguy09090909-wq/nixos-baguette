@@ -75,6 +75,7 @@
   config.common.default = "*";
 };
 
+services.flatpak.enable = true;
 services.dbus.enable = true; 
   system.stateVersion = "25.05";
 }

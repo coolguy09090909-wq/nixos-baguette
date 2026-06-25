@@ -199,7 +199,7 @@
                         mv disk.img $out/baguette_rootfs.img
                         echo "Done! Image created at $out"
                       '';
-                      QEMU_OPTS = "-drive file=disk.img,format=raw,if=virtio,cache=unsafe";
+                      QEMU_OPTS = "-drive file=disk.img,format=raw,if=virtio,cache=unsafe -enable-kvm";
                       buildInputs = [
                         pkgs.btrfs-progs
                         pkgs.util-linux

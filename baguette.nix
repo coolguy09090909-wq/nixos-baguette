@@ -1,4 +1,4 @@
-(
+  in
   {
     modulesPath,
     pkgs,
@@ -6,6 +6,7 @@
     lib,
     ...
   }:
+}
   let
     baguette-env = builtins.readFile (
       pkgs.stdenv.mkDerivation {
@@ -357,3 +358,4 @@
       };
     };
   }
+}

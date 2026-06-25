@@ -1,13 +1,6 @@
-  in
-  {
-    modulesPath,
-    pkgs,
-    config,
-    lib,
-    ...
-  }:
-}
-  let
+{ modulesPath, pkgs, config, lib, ... }:
+
+let
     baguette-env = builtins.readFile (
       pkgs.stdenv.mkDerivation {
         name = "10-baguette-envs.sh";

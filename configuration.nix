@@ -21,12 +21,6 @@ fonts.packages = with pkgs; [
   noto-fonts-cjk-sans
 ];
 
-environment.systemPackages = with pkgs; [
-  gnome-themes-extra
-  adwaita-icon-theme
-  gdk-pixbuf
-  librsvg
-];
   # Enable flakes: https://nixos.wiki/wiki/Flakes
   nix.settings.experimental-features = [
     "nix-command"
@@ -50,6 +44,8 @@ environment.systemPackages = with pkgs; [
     gnome-themes-extra
     adwaita-icon-theme
     nemo
+    gdk-pixbuf
+    librsvg
   ];
 
   # Configure your system-wide user settings (groups, etc), add more users as needed.

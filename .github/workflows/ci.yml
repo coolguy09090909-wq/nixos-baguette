@@ -47,7 +47,13 @@ jobs:
           sudo udevadm control --reload-rules
           sudo udevadm trigger --name-match=kvm
 
-      - run: nix build .#baguette-zimage --option extra-sandbox-paths /dev/kvm
+      - name: Build baguette image
+        run: |
+          nix build .#baguette-zimage --option extra-sandbox-paths /dev/kvm --keep-failed || {
+            echo "=== FULL BUILD LOG ==="
+            nix log /nix/store/vm14z1p6cpqs2j7d9a8a65rdchqxhsjw-nixos-baguette-btrfs.img.drv 2>/dev/null || true
+            exit 1
+          }
 
       - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4  # v5.0.0
         with:

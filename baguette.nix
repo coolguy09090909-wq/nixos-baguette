@@ -242,7 +242,7 @@
                 );
               in
               lib.overrideDerivation img (old: {
-                requiredSystemFeatures = [ ]; # Allow building even without kvm
+                requiredSystemFeatures = [ "kvm" ]; # Allow building even without kvm
               });
 
             btrfsImageCompressed =

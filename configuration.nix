@@ -73,6 +73,19 @@ fonts.packages = with pkgs; [
     ];
   };
 
+  programs.nix-ld = {
+  enable = true;
+  libraries = with pkgs; [
+    stdenv.cc.cc
+    zlib
+    openssl
+    glib
+    libgcc
+    xz
+    curl
+  ];
+};
+
   environment.variables = {
     LIBVA_DRIVER_NAME = "virtio";
   };

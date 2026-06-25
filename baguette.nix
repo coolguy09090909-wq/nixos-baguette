@@ -85,6 +85,16 @@
       # Don't attempt to load kernel modules unavailable in Baguette.
       boot.kernelModules = [ "virtio_gpu" ];
 
+      hardware.graphics.enable = true;
+
+     networking = {
+        hostName = lib.mkDefault "baguette-nixos";
+        useHostResolvConf = true;
+        resolvconf.enable = false;
+        dhcpcd.enable = false;
+
+        hosts = {
+
       networking = {
         hostName = lib.mkDefault "baguette-nixos";
         useHostResolvConf = true;

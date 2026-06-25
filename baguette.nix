@@ -41,7 +41,7 @@
 
       virtualisation.diskImageSize = mkOption {
         type = types.ints.positive;
-        default = 4096;
+        default = 12288;
         description = ''
           The size of the resulting BTRFS image in MiB (1024×1024 bytes).
         '';
